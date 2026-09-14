@@ -18,6 +18,20 @@ public class Patineta extends Vehiculo {
      */
     @Override
     public double calcularCosto(int horas) {
-        throw new UnsupportedOperationException("TODO: implementar el requerimiento.");
+    	
+    	double valor = 6000;
+        double total = 0;
+    	if(horas <= 0) {
+    		throw new IllegalArgumentException("El número de horas debe ser mayor a 0");
+    	}
+    	
+    	total = horas * valor;
+    	
+    	if (horas >=3) {
+    		total = total - (total*0.1);
+    			
+    	}
+    	
+    	return total;
     }
 }
