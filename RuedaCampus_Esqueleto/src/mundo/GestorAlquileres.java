@@ -83,6 +83,16 @@ public class GestorAlquileres {
      * @throws IOException TODO: condición que la produce
      */
     public void generarComprobante(Comprobante comprobante, String ruta) throws IOException {
-        throw new UnsupportedOperationException("TODO: implementar el requerimiento.");
+    	ruta= "/RuedaCampus_Esqueleto/data/comprobante.txt";
+        if (comprobante.equals(null)) { 
+    	throw new IllegalArgumentException("El comprobante no puede ser nulo");
     }
+    try(FileWriter archivo= new FileWriter(ruta);
+    		BufferedWriter bw = new BufferedWriter(archivo)){
+    	bw.write(comprobante.getCodigo());
+    	bw.write(comprobante.getTipo());
+    	bw.write(comprobante.getHoras());
+    	bw.write((int) comprobante.getTotal());
+    }
+}
 }

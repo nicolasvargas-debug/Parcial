@@ -35,18 +35,37 @@ public class Principal {
             try {
                 switch (opcion) {
                     case 1: {
-                        // TODO: Solicitar código y horas; cotizar usando una referencia Vehiculo; mostrar el costo.
+                    	
+                    	System.out.println("Codigo del vehiculo buscado");
+                    	String codigo= entrada.nextLine();
+                    	Vehiculo v= gestor.buscarVehiculo(codigo);
+                    	System.out.println("Horas deseadas: ");
+                    	int horas= entrada.nextInt();
+                    	double c=v.calcularCosto(horas);
+                    	System.out.println("Costo de alquilar el vehiculo= "+ c);
+                        //Solicitar código y horas; cotizar usando una referencia Vehiculo; mostrar el costo.
                         break;
                     }
                     case 2: {
-                        // TODO: Solicitar código; iniciar el alquiler; mostrar confirmación.
+                    	System.out.println("Codigo del vehiculo buscado");
+                    	String codigo= entrada.nextLine();
+                    	gestor.iniciarAlquiler(codigo);
+                    	System.out.println("Alquiler realizado exitosamente");
+                        //Solicitar código; iniciar el alquiler; mostrar confirmación.
                         break;
                     }
                     case 3: {
-                        // TODO: Solicitar código y horas; finalizar; conservar y mostrar el último comprobante.
+                    	System.out.println("Codigo del vehiculo buscado");
+                    	String codigo= entrada.nextLine();
+                    	System.out.println("Horas de uso: ");
+                    	int horas= entrada.nextInt();
+                    	gestor.finalizarAlquiler(codigo, horas);
+                    
+                        // Solicitar código y horas; finalizar; conservar y mostrar el último comprobante.
                         break;
                     }
                     case 4: {
+                    	
                         // TODO: Guardar ultimoComprobante en ./data/comprobante.txt; mostrar confirmación.
                         break;
                     }
