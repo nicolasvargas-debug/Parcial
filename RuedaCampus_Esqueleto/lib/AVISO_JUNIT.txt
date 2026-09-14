@@ -1,0 +1,6 @@
+Dependencia suministrada para trabajar sin conexión.
+Archivo: junit-platform-console-standalone-1.10.0.jar
+JUnit Jupiter 5.10.0 / JUnit Platform 1.10.0.
+Fuente: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-console-standalone/1.10.0/
+El archivo JAR conserva los avisos y licencias incluidos por sus autores en META-INF.
+No se exige configurar Maven ni Gradle.
