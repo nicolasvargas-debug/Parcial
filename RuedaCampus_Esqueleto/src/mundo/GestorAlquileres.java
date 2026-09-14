@@ -39,7 +39,13 @@ public class GestorAlquileres {
      * @throws IllegalStateException TODO: condición que la produce
      */
     public void iniciarAlquiler(String codigo) {
-        throw new UnsupportedOperationException("TODO: implementar el requerimiento.");
+    	Vehiculo vehiculo = buscarVehiculo(codigo);
+    	if(vehiculo.isDisponible()==true) {
+    		vehiculo.setDisponible(false);
+        }
+        else {
+        	throw new IllegalStateException("El vehiculo ya se encuentra alquilado");
+        }
     }
 
     /**
@@ -51,7 +57,21 @@ public class GestorAlquileres {
      * @throws IllegalStateException TODO: condición que la produce
      */
     public Comprobante finalizarAlquiler(String codigo, int horas) {
-        throw new UnsupportedOperationException("TODO: implementar el requerimiento.");
+    	Vehiculo vehiculo = buscarVehiculo(codigo);
+    	if(vehiculo.isDisponible()==true) {
+    		throw new IllegalStateException("El vehiculo ya se encuentra disponible");
+        }
+    	if (horas< 0) {
+    		throw new IllegalArgumentException("El numero de horas no puede ser negativo");
+    	}
+
+     
+        else {
+        	double total= vehiculo.calcularCosto(horas);
+        	Comprobante comprobante=new Comprobante(codigo, vehiculo.getTipo(), horas, total);
+        	vehiculo.setDisponible(true);
+        	return comprobante ;
+        }
     }
 
     /**

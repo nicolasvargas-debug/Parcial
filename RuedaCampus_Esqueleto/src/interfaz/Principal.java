@@ -11,7 +11,7 @@ public class Principal {
     // Integrante 2: nombre completo y código.
 
     public static void main(String[] args) {
-        // TODO: invocar únicamente a menu().
+        menu();
     }
 
     public static void menu() {
